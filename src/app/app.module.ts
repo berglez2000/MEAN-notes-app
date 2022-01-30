@@ -2,6 +2,7 @@ import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { HttpClientModule } from '@angular/common/http';
 import { AppRoutingModule } from './app-routing.module';
+import { FormsModule } from '@angular/forms';
 
 import { AppComponent } from './app.component';
 import { MainComponent } from './components/main/main.component';
@@ -12,8 +13,21 @@ import { LoginComponent } from './components/main/forms/login/login.component';
 import { RegisterComponent } from './components/main/forms/register/register.component';
 
 @NgModule({
-  declarations: [AppComponent, MainComponent, HeaderComponent, DashboardComponent, LoginComponent, RegisterComponent],
-  imports: [BrowserModule, AppRoutingModule, HttpClientModule, NgbModule],
+  declarations: [
+    AppComponent,
+    MainComponent,
+    HeaderComponent,
+    DashboardComponent,
+    LoginComponent,
+    RegisterComponent,
+  ],
+  imports: [
+    BrowserModule,
+    AppRoutingModule,
+    HttpClientModule,
+    NgbModule,
+    FormsModule,
+  ],
   providers: [],
   bootstrap: [AppComponent],
 })

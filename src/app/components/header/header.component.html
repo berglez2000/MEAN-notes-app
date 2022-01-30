@@ -2,7 +2,7 @@
   <div class="container">
     <div *ngIf="isAuth" class="d-flex justify-content-between">
       <div>
-        <button class="btn btn-light">Dashboard</button>
+        <button class="btn btn-light" routerLink="/">Dashboard</button>
       </div>
       <div>
         <button class="btn btn-danger">Logout</button>
@@ -10,8 +10,8 @@
     </div>
     <div *ngIf="!isAuth" class="d-flex justify-content-between">
       <div>
-        <button class="btn btn-light mr-3">Login</button>
-        <button class="btn btn-light">Register</button>
+        <button class="btn btn-light mr-3" routerLink="/login">Login</button>
+        <button class="btn btn-light" routerLink="/register">Register</button>
       </div>
     </div>
   </div>
