@@ -20,19 +20,25 @@ export class AuthService {
   private apiUrl: string = 'http://localhost:5000/api/users/';
   private isAuth: boolean = false;
   private authStatus = new Subject<boolean>();
-  private jtwToken: any;
+  private jwtToken: any;
   private userID: any;
 
   constructor(private http: HttpClient) {}
 
   getJWTToken(): any {
-    this.jtwToken = localStorage.getItem('id_token');
-    return this.jtwToken;
+    this.jwtToken = localStorage.getItem('id_token');
+    return this.jwtToken;
   }
 
   getUserID(): any {
     this.userID = localStorage.getItem('id_user');
     return this.userID;
+  }
+
+  storeUserInformation(jwtToken: any, userID: any, email: string): void {
+    localStorage.setItem('id_token', jwtToken);
+    localStorage.setItem('id_user', userID);
+    localStorage.setItem('email', email);
   }
 
   changeAuth(isAuth: boolean): void {

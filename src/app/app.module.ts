@@ -11,6 +11,7 @@ import { DashboardComponent } from './components/main/dashboard/dashboard.compon
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { LoginComponent } from './components/main/forms/login/login.component';
 import { RegisterComponent } from './components/main/forms/register/register.component';
+import { AlertComponent } from './components/global/alert/alert.component';
 
 @NgModule({
   declarations: [
@@ -20,6 +21,7 @@ import { RegisterComponent } from './components/main/forms/register/register.com
     DashboardComponent,
     LoginComponent,
     RegisterComponent,
+    AlertComponent,
   ],
   imports: [
     BrowserModule,
