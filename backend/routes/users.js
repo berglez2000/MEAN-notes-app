@@ -72,6 +72,10 @@ router.post("/login", async (req, res) => {
   }
 });
 
+router.get("/validate", checkAuth, (req, res) => {
+  res.status(200).json({ success: true, msg: "Token is verified" });
+});
+
 router.get("/user/:id", checkAuth, async (req, res) => {
   try {
     const user = await User.findOne({ _id: req.params.id });

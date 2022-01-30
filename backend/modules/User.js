@@ -11,10 +11,6 @@ const UserSchema = mongoose.Schema({
     type: String,
     required: true,
   },
-  token: {
-    type: String,
-    unique: true,
-  },
 });
 
 UserSchema.plugin(uniqueValidator);
