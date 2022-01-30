@@ -6,9 +6,10 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { MainComponent } from './components/main/main.component';
 import { HeaderComponent } from './components/header/header.component';
+import { DashboardComponent } from './components/main/dashboard/dashboard.component';
 
 @NgModule({
-  declarations: [AppComponent, MainComponent, HeaderComponent],
+  declarations: [AppComponent, MainComponent, HeaderComponent, DashboardComponent],
   imports: [BrowserModule, AppRoutingModule, HttpClientModule],
   providers: [],
   bootstrap: [AppComponent],
