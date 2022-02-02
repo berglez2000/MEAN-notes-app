@@ -27,7 +27,7 @@ router.post("/register", (req, res) => {
         userID: req.body.userID,
       });
       newUser
-        .save({ validateModifiedOnly: true })
+        .save()
         .then(() => {
           res.status(201).json({ success: true, msg: "User added" });
         })

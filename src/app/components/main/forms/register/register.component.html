@@ -1,10 +1,16 @@
 <h3>Register</h3>
 <div class="card bg-light mt-4">
   <div class="card-body">
-    <form>
+    <form (submit)="onSubmit()">
       <div class="mb-3">
         <label for="email" class="form-label">Email address</label>
-        <input type="email" class="form-control" id="email" name="email" />
+        <input
+          type="email"
+          class="form-control"
+          id="email"
+          name="email"
+          [(ngModel)]="email"
+        />
       </div>
       <div class="mb-3">
         <label for="password" class="form-label">Password</label>
@@ -13,6 +19,7 @@
           class="form-control"
           id="password"
           name="password"
+          [(ngModel)]="password"
         />
       </div>
       <div class="mb-3">
@@ -22,9 +29,11 @@
           class="form-control"
           id="repeatPassword"
           name="repeatPassword"
+          [(ngModel)]="repeatPassword"
         />
       </div>
       <button type="submit" class="btn btn-primary">Register</button>
     </form>
   </div>
 </div>
+<app-alert></app-alert>

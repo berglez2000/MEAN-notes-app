@@ -1,15 +1,15 @@
 const express = require("express");
-const { db } = require("../modules/Note");
 const router = express.Router();
 const Note = require("../modules/Note");
+const checkAuth = require("../middleware/check-auth");
 
 router.get("/", (req, res) => {
   res.json({ success: true });
 });
 
-router.post("/", (req, res) => {
+router.post("/", checkAuth, (req, res) => {
   const newNote = new Note({
-    creator: req.body.userId,
+    creator: req.body.creator,
     note: req.body.note,
   });
 
@@ -21,6 +21,15 @@ router.post("/", (req, res) => {
     .catch((err) => {
       res.status(400).json({ success: false, msg: err });
     });
+});
+
+router.get("/:id", checkAuth, async (req, res) => {
+  try {
+    const notes = await Note.find({ creator: req.params.id });
+    res.json(notes);
+  } catch (error) {
+    res.json({ success: false, err: err });
+  }
 });
 
 module.exports = router;
