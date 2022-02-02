@@ -5,7 +5,7 @@
         <button class="btn btn-light" routerLink="/">Dashboard</button>
       </div>
       <div>
-        <button class="btn btn-danger">Logout</button>
+        <button class="btn btn-danger" (click)="onLogoutClick()">Logout</button>
       </div>
     </div>
     <div *ngIf="!isAuth" class="d-flex justify-content-between">

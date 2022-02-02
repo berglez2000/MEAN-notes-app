@@ -53,4 +53,10 @@ export class LoginService {
         }
       });
   }
+
+  onLogout(): void {
+    this.authService.deleteUserInformation();
+    this.authService.changeAuth(false);
+    this.router.navigate(['/login']);
+  }
 }

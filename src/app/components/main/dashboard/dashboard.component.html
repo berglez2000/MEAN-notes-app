@@ -1,1 +1,4 @@
-<p>dashboard works!</p>
+<div *ngIf="isLoaded">
+  <a *ngIf="!isAuth" routerLink="/login">Please login</a>
+  <div *ngIf="isAuth" class="notes"></div>
+</div>

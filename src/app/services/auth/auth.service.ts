@@ -41,6 +41,12 @@ export class AuthService {
     localStorage.setItem('email', email);
   }
 
+  deleteUserInformation(): void {
+    localStorage.removeItem('id_token');
+    localStorage.removeItem('id_user');
+    localStorage.removeItem('email');
+  }
+
   changeAuth(isAuth: boolean): void {
     this.isAuth = isAuth;
     this.authStatus.next(this.isAuth);
