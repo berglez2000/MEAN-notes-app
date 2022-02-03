@@ -15,12 +15,18 @@ export class DashboardComponent implements OnInit, OnDestroy {
   constructor(private authService: AuthService) {}
 
   ngOnInit(): void {
-    this.subscription = this.authService
-      .authStatusListener()
-      .subscribe((isAuth: boolean) => {
-        this.isAuth = isAuth;
-        this.isLoaded = true;
-      });
+    this.isAuth = this.authService.isUserAuth();
+
+    if (!this.isAuth) {
+      this.subscription = this.authService
+        .authStatusListener()
+        .subscribe((isAuth: boolean) => {
+          this.isAuth = isAuth;
+          this.isLoaded = true;
+        });
+    } else {
+      this.isLoaded = true;
+    }
   }
 
   ngOnDestroy(): void {

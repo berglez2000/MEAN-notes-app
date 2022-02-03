@@ -16,6 +16,7 @@ import { NotesComponent } from './components/main/dashboard/notes/notes.componen
 import { SpinnerComponent } from './components/global/spinner/spinner.component';
 import { NoteItemComponent } from './components/main/dashboard/notes/note-item/note-item.component';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
+import { CreateNoteComponent } from './components/main/create-note/create-note.component';
 
 @NgModule({
   declarations: [
@@ -29,6 +30,7 @@ import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
     NotesComponent,
     SpinnerComponent,
     NoteItemComponent,
+    CreateNoteComponent,
   ],
   imports: [
     BrowserModule,

@@ -15,16 +15,19 @@ let httpOptions = {
 })
 export class NotesService {
   private apiUrl: string = 'http://localhost:5000/api/notes/';
+  private token: any;
 
   constructor(private http: HttpClient, private authService: AuthService) {}
 
   getNotes(userId: any): Observable<Note[]> {
     const url: string = this.apiUrl + userId;
-    const idToken: any = this.authService.getJWTToken();
-    httpOptions.headers = httpOptions.headers.append(
-      'Authorization',
-      `Bearer ${idToken}`
-    );
+    if (!this.token) {
+      this.token = this.authService.getJWTToken();
+      httpOptions.headers = httpOptions.headers.append(
+        'Authorization',
+        `Bearer ${this.token}`
+      );
+    }
     return this.http.get<Note[]>(url, httpOptions);
   }
 }

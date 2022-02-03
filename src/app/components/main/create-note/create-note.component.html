@@ -1,0 +1,17 @@
+<div class="card">
+  <div class="card-body">
+    <form>
+      <div class="mb-3">
+        <label for="note" class="form-label">Note Text</label>
+        <textarea
+          class="form-control"
+          id="note"
+          rows="3"
+          name="note"
+          [(ngModel)]="note"
+        ></textarea>
+      </div>
+      <button type="submit" class="btn btn-success">Create Note</button>
+    </form>
+  </div>
+</div>

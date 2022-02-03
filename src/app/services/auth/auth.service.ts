@@ -35,6 +35,10 @@ export class AuthService {
     return this.userID;
   }
 
+  isUserAuth(): boolean {
+    return this.isAuth;
+  }
+
   storeUserInformation(jwtToken: any, userID: any, email: string): void {
     localStorage.setItem('id_token', jwtToken);
     localStorage.setItem('id_user', userID);
