@@ -14,4 +14,8 @@ export class NoteItemComponent implements OnInit {
   constructor() {}
 
   ngOnInit(): void {}
+
+  onDelete(): void {
+    console.log(this.note);
+  }
 }

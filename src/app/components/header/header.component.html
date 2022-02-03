@@ -2,7 +2,10 @@
   <div class="container">
     <div *ngIf="isAuth" class="d-flex justify-content-between">
       <div>
-        <button class="btn btn-light" routerLink="/">Dashboard</button>
+        <button class="btn btn-light mr-3" routerLink="/">Dashboard</button>
+        <button class="btn btn-light" routerLink="/create-note">
+          Create Note
+        </button>
       </div>
       <div>
         <button class="btn btn-danger" (click)="onLogoutClick()">Logout</button>
