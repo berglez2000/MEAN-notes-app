@@ -2,6 +2,7 @@ import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
 import { Note } from 'src/app/models/Note';
+import { ServerResponse } from 'src/app/models/ServerResponse';
 import { AuthService } from '../auth/auth.service';
 
 let httpOptions = {
@@ -29,5 +30,16 @@ export class NotesService {
       );
     }
     return this.http.get<Note[]>(url, httpOptions);
+  }
+
+  addNote(note: Note): Observable<ServerResponse> {
+    if (!this.token) {
+      this.token = this.authService.getJWTToken();
+      httpOptions.headers = httpOptions.headers.append(
+        'Authorization',
+        `Bearer ${this.token}`
+      );
+    }
+    return this.http.post<ServerResponse>(this.apiUrl, note, httpOptions);
   }
 }

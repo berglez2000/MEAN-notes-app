@@ -1,6 +1,6 @@
 <div class="card">
   <div class="card-body">
-    <form>
+    <form (submit)="onSubmit()">
       <div class="mb-3">
         <label for="note" class="form-label">Note Text</label>
         <textarea
@@ -8,10 +8,11 @@
           id="note"
           rows="3"
           name="note"
-          [(ngModel)]="note"
+          [(ngModel)]="noteText"
         ></textarea>
       </div>
       <button type="submit" class="btn btn-success">Create Note</button>
     </form>
   </div>
 </div>
+<app-alert></app-alert>

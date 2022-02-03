@@ -1,5 +1,6 @@
 <div class="mt-4">
   <div class="notes" *ngIf="isLoaded">
+    <strong *ngIf="notes.length == 0">No notes yet</strong>
     <app-note-item *ngFor="let note of notes" [note]="note"></app-note-item>
   </div>
   <div class="spinner d-flex justify-content-center" *ngIf="!isLoaded">
