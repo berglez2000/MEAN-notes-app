@@ -1,5 +1,6 @@
 import { Component, Input, OnInit } from '@angular/core';
 import { Note } from 'src/app/models/Note';
+import { faTimes } from '@fortawesome/free-solid-svg-icons';
 
 @Component({
   selector: 'app-note-item',
@@ -8,6 +9,7 @@ import { Note } from 'src/app/models/Note';
 })
 export class NoteItemComponent implements OnInit {
   @Input() note!: Note;
+  faTimes = faTimes;
 
   constructor() {}
 

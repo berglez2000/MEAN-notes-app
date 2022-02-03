@@ -15,6 +15,7 @@ import { AlertComponent } from './components/global/alert/alert.component';
 import { NotesComponent } from './components/main/dashboard/notes/notes.component';
 import { SpinnerComponent } from './components/global/spinner/spinner.component';
 import { NoteItemComponent } from './components/main/dashboard/notes/note-item/note-item.component';
+import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 
 @NgModule({
   declarations: [
@@ -35,6 +36,7 @@ import { NoteItemComponent } from './components/main/dashboard/notes/note-item/n
     HttpClientModule,
     NgbModule,
     FormsModule,
+    FontAwesomeModule,
   ],
   providers: [],
   bootstrap: [AppComponent],
