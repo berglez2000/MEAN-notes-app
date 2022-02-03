@@ -10,7 +10,7 @@ import { NotesService } from 'src/app/services/notes/notes.service';
 })
 export class NotesComponent implements OnInit {
   notes: Note[] = [];
-  isLoading: boolean = false;
+  isLoaded: boolean = false;
   userId: any;
 
   constructor(
@@ -21,7 +21,8 @@ export class NotesComponent implements OnInit {
   ngOnInit(): void {
     this.userId = this.authService.getUserID();
     this.notesService.getNotes(this.userId).subscribe((notes: Note[]) => {
-      console.log(notes);
+      this.notes = notes;
+      this.isLoaded = true;
     });
   }
 }

@@ -13,6 +13,8 @@ import { LoginComponent } from './components/main/forms/login/login.component';
 import { RegisterComponent } from './components/main/forms/register/register.component';
 import { AlertComponent } from './components/global/alert/alert.component';
 import { NotesComponent } from './components/main/dashboard/notes/notes.component';
+import { SpinnerComponent } from './components/global/spinner/spinner.component';
+import { NoteItemComponent } from './components/main/dashboard/notes/note-item/note-item.component';
 
 @NgModule({
   declarations: [
@@ -24,6 +26,8 @@ import { NotesComponent } from './components/main/dashboard/notes/notes.componen
     RegisterComponent,
     AlertComponent,
     NotesComponent,
+    SpinnerComponent,
+    NoteItemComponent,
   ],
   imports: [
     BrowserModule,

@@ -1,1 +1,8 @@
-<p>notes works!</p>
+<div class="mt-4">
+  <div class="notes" *ngIf="isLoaded">
+    <app-note-item *ngFor="let note of notes" [note]="note"></app-note-item>
+  </div>
+  <div class="spinner d-flex justify-content-center" *ngIf="!isLoaded">
+    <app-spinner></app-spinner>
+  </div>
+</div>
