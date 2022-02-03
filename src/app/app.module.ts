@@ -12,6 +12,7 @@ import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { LoginComponent } from './components/main/forms/login/login.component';
 import { RegisterComponent } from './components/main/forms/register/register.component';
 import { AlertComponent } from './components/global/alert/alert.component';
+import { NotesComponent } from './components/main/dashboard/notes/notes.component';
 
 @NgModule({
   declarations: [
@@ -22,6 +23,7 @@ import { AlertComponent } from './components/global/alert/alert.component';
     LoginComponent,
     RegisterComponent,
     AlertComponent,
+    NotesComponent,
   ],
   imports: [
     BrowserModule,
