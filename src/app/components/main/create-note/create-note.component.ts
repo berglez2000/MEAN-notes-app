@@ -24,6 +24,10 @@ export class CreateNoteComponent implements OnInit {
 
   ngOnInit(): void {}
 
+  deleteText(): void {
+    this.noteText = '';
+  }
+
   onSubmit(): void {
     if (!this.noteText) {
       const alert: Alert = this.alertService.createAlert(
@@ -71,5 +75,7 @@ export class CreateNoteComponent implements OnInit {
         this.alertService.addAlert(alert);
       }
     );
+
+    this.deleteText();
   }
 }
