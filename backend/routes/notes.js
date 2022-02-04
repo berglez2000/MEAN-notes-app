@@ -32,4 +32,15 @@ router.get("/:id", checkAuth, async (req, res) => {
   }
 });
 
+router.delete("/:id", checkAuth, async (req, res) => {
+  try {
+    const note = await (await Note.findOne({ _id: req.params.id })).delete();
+    res.status(201).json({ success: true, msg: "Note deleted successfully" });
+  } catch (error) {
+    res
+      .status(404)
+      .json({ success: false, msg: "Note with this ID doesn't exist" });
+  }
+});
+
 module.exports = router;

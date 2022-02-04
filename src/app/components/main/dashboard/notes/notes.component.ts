@@ -28,6 +28,12 @@ export class NotesComponent implements OnInit, OnDestroy {
         this.notes = notes;
         this.isLoaded = true;
       });
+
+    this.subscription = this.notesService
+      .onDeleteNote()
+      .subscribe((id: any) => {
+        this.notes = this.notes.filter((note) => note._id !== id);
+      });
   }
 
   ngOnDestroy(): void {

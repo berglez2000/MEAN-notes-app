@@ -1,6 +1,8 @@
 import { Component, Input, OnInit } from '@angular/core';
 import { Note } from 'src/app/models/Note';
 import { faTimes } from '@fortawesome/free-solid-svg-icons';
+import { NotesService } from 'src/app/services/notes/notes.service';
+import { ServerResponse } from 'src/app/models/ServerResponse';
 
 @Component({
   selector: 'app-note-item',
@@ -11,11 +13,15 @@ export class NoteItemComponent implements OnInit {
   @Input() note!: Note;
   faTimes = faTimes;
 
-  constructor() {}
+  constructor(private notesService: NotesService) {}
 
   ngOnInit(): void {}
 
   onDelete(): void {
-    console.log(this.note);
+    this.notesService
+      .deleteNote(this.note._id)
+      .subscribe((res: ServerResponse) => {
+        console.log(res);
+      });
   }
 }
